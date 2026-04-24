@@ -1,17 +1,40 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root{
-    --coor-light: #f4f4f4;
-    --color-dark: #333
-    --color-orange: #ff6600
+@font-face {
+    font-family: Quicksand-Bold;
+    src: url(../fonts/Quicksand-Bold.ttf);
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--coor-light);
+    font-weight: 800;
+    /*nesting - aninhamento*/
+    &:hover{
+        color: var(--color-orange);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Quicksand-Bold;
+}
+
+:root{
+    --coor-light: #f4f4f4;
+    --color-dark: #333;
+    --color-orange: #ff6600;
+    --spacing-sm: 10px;
+    --spacing-md: 30px;
+    --spacing-bg: 50px;
 }
 
 section {
@@ -20,16 +43,50 @@ section {
 
 .hero {
     height: 100dvh;
-    background-image: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,1)), url(../Projeto-HD/images/motos/banner.jpg);
+    background-image: linear-gradient(to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0.9)), url(../Projeto-HD/images/motos/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 
     .header-hero{
-        background-color: aqua;
+        height: 100px;
+        padding-inline: var(--spacing-md);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-items: center;
         h1{
-            color: antiquewhite;
+            color: var(--color-orange);
+            font-size: xx-large;
         }
+        .nav-hero-menu{
+            display: flex;
+            gap: 10px;
+        }
+    }
+}
+
+.cta{
+    color: var(--coor-light);
+    height: calc(100dvh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+
+    h2{
+        color: var(--color-orange);
+        font-size: 8vmin;
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    p{
+        width: 65%;
+        text-wrap: balance;
+        text-align: center;
+        line-height: 1.6;
     }
 }
